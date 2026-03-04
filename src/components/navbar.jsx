@@ -1,26 +1,27 @@
 import styles from '../styles/Navbar.module.css'
-import logo from "../assets/lorem-ipsum-logo-png_seeklogo-543371.png"
+import logo from "../assets/logo_mate.png"
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { CartWidget } from './CartWidget.jsx';
-
+import { getCategorias } from '../firebase/db.js';
 
 export function Navbar() {
 
     const [categorias, setCategorias] = useState([]);
 
+
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch('https://dummyjson.com/products/categories');
-            const data = await response.json();
-            setCategorias(data);
+        const categorias = async () => {
+            const categoriasObtenidas = await getCategorias();
+
+            setCategorias(categoriasObtenidas);
         };
-        fetchData()
+        categorias();
     }, [])
 
 
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className={`navbar bg-base-100 shadow-sm ${styles.navbar}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,7 +33,7 @@ export function Navbar() {
                             <a>Categorias</a>
                             <ul className="p-2">
                                 {categorias.map(categoria => (
-                                    <li key={categoria.name}><Link to={`/categoria/${categoria.slug}`} key={`categoria-${categoria.slug}`}>{categoria.name}</Link></li>
+                                    <li key={categoria}><Link key={categoria} to={`/categoria/${categoria}`}>{categoria}</Link></li>
                                 ))}
                             </ul>
                         </li>
@@ -48,21 +49,21 @@ export function Navbar() {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to={`/`}>Home</Link></li>
-                    <li><Link to={`/about`}>About</Link></li>
                     <li>
                         <details>
                             <summary>Categorias</summary>
                             <ul className="p-2 bg-base-100 w-96 z-1 grid grid-cols-2">
                                 {categorias.map(categoria => (
-                                    <li key={categoria.slug}><Link to={`/categoria/${categoria.slug}`} key={`categoria-${categoria.slug}`}>{categoria.name}</Link></li>
+                                    <li key={categoria}><Link key={categoria} to={`/categoria/${categoria}`}>{categoria}</Link></li>
                                 ))}
                             </ul>
                         </details>
                     </li>
+                    <li><Link to={`/about`}>About</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                <CartWidget/>
+                <CartWidget />
             </div>
         </div>
     )

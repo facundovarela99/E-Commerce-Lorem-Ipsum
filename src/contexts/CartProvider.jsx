@@ -1,20 +1,33 @@
 import {CartContext} from './CartContext.jsx'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export function CartProvider({children}){
-    const [cart, SetCart] = useState([])
+    const [cart, SetCart] = useState(() => {
+        const storedCart = localStorage.getItem('cart');
+        return storedCart ? JSON.parse(storedCart) : [];
+    });
 
-    const addToCart = producto=>{
-        const IsInCart = cart.some(prod => prod.id = producto.id);
+    // Persist cart in localStorage whenever it changes
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
+
+    const addToCart = producto =>{
+        const IsInCart = cart.some(prod => prod.id === producto.id);
         if (!IsInCart) {
             SetCart([...cart, producto])
         } else {
             const updatedCart = cart.map(item => {
-                if (item.id === producto.id) return {...item, quantity: item.quantity + producto.quantity}
+                if (item.id === producto.id) return {...item, quantity: producto.quantity}
                 return item
             })
             SetCart(updatedCart)
         }
+    }
+
+    const removeFromCart = productoId => {
+        const updatedCart = cart.filter(prod => prod.id !== productoId);
+        SetCart(updatedCart);
     }
 
     const GetTotalProducts = () =>{
@@ -22,8 +35,12 @@ export function CartProvider({children}){
         return totalQuantity
     }
 
+    const GetCart = () =>{
+        return cart;
+    }
+
     return(
-        <CartContext.Provider value={{addToCart, GetTotalProducts}}>
+        <CartContext.Provider value={{addToCart, GetTotalProducts, GetCart, removeFromCart}}>
             {children}
         </CartContext.Provider>
     )

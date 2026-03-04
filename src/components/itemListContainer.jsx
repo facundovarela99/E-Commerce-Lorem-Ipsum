@@ -1,24 +1,40 @@
 import { ItemList } from './ItemList.jsx';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { productosCategoria } from '../firebase/db.js';
+import { getProductos } from '../firebase/db.js';
+
 
 
 
 export function ItemListContainer(){
     
-  const [items, setItems] = useState([]);
+  const [productos, setItems] = useState([]);
 
   const {nombreCategoria} = useParams();
 
+  
   useEffect(()=>{
+    if (nombreCategoria) {
+      
+      const productosCategoriaObtenidos = async () => {
+        const productosObtenidos = await productosCategoria(nombreCategoria);
+        console.log('Productos obtenidos!!!!: ', productosObtenidos);
+        setItems(productosObtenidos);
+      };
+      productosCategoriaObtenidos();
+    }else{
+      const productosObtenidos = async () =>{
+        const productosObtenidos = await getProductos();
+        console.log('Productos obtenidos!!!!: ', productosObtenidos);
+        setItems(productosObtenidos);
+      }
+      productosObtenidos();
+    }
+  
+    
 
-    const url_productos = 'https://dummyjson.com/products'
-    const url_categorias = `https://dummyjson.com/products/category/${nombreCategoria}`
-
-    fetch(nombreCategoria ? url_categorias : url_productos)
-    .then(res => res.json())
-    .then(data => setItems(data.products));
   }, [nombreCategoria])
 
-    return <ItemList items={items}/>
+    return <ItemList productos={productos}/>
 }

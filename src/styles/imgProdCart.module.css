@@ -1,0 +1,11 @@
+.imgProd {
+  transition: transform 0.3s ease; /* animación suave */
+  border: 1px solid rgb(70, 14, 14);
+}
+
+.imgProd:hover {
+  transform: scale(1.2); /* agranda un 20% */
+  z-index: 10;           /* se pone por encima de su caja */
+  position: relative;    /* permite que se salga del contenedor */
+  border: 1px solid rgb(70, 14, 14);
+}

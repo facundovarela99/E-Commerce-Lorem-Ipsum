@@ -2,14 +2,14 @@
     background-color: rgb(81, 81, 81);
 } 
 
-.divGames{
+.divProducts{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.divGame{
+.divProduct{
     border-radius: 20px;
     overflow: hidden;
     width: 25%;
@@ -27,7 +27,7 @@
     height: 100%;
 }
 
-.imgGame{
+.imgProdItem{
     width: 100%;
     height: 100%;
     object-fit: cover;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 import { Product } from "./Product.jsx";
+import { getProducto } from "../firebase/db.js";
 
 export function ProductDetail(){
 
@@ -9,9 +10,12 @@ export function ProductDetail(){
     const [producto, setproducto] = useState({});
 
     useEffect(()=>{
-        fetch(`https://dummyjson.com/products/${id}`)
-            .then(res=>res.json())
-            .then(data=>setproducto(data))
+        const setearProducto = async () => {
+            const productoObtenido = await getProducto(id);
+            console.log('Producto obtenido: ', productoObtenido);
+            setproducto(productoObtenido);
+        }
+        setearProducto();
     }, [id])
 
     return <Product producto={producto}></Product>

@@ -11,7 +11,13 @@ export function Counter({producto}){
 
     const handlerSuma = ()=> setCounter(counter + 1);
     
-    const handlerResta = ()=> setCounter(counter - 1);
+    const handlerResta = ()=> {
+        if (counter === 0) {
+            setCounter(counter - 0)
+        } else{
+            setCounter(counter - 1)
+        }
+    };
 
     useEffect(()=>{
         return ()=>{
@@ -24,7 +30,7 @@ export function Counter({producto}){
             <div className="flex place-content-evenly">
             <button onClick={handlerSuma} className="bg-green-500 px-8 py-3"><strong>+</strong></button>
             <button onClick={handlerResta} className="bg-red-500 px-8 py-3"><strong>-</strong></button>
-            <button className="btn btn-primary" onClick={handlerAddToCart}>Agregar al carrito</button>
+            <button className="btn btn-primary" onClick={handlerAddToCart} disabled={counter < 1}>Agregar al carrito</button>
             </div>
         </div>
     )

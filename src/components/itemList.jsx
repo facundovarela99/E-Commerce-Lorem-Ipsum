@@ -1,11 +1,11 @@
 import styles from '../styles/ItemListContainer.module.css'
 import { Item } from './Item.jsx'
 
-export function ItemList({items}){
+export function ItemList({productos}){
     return(
     <div className={styles.divItemListContainer}>
-            <div className={styles.divGames}>
-                {items.map(producto => (
+            <div className={styles.divProducts}>
+                {productos.map(producto => (
                     <Item producto={producto} key={producto.id}></Item>
                 ))}
             </div>
