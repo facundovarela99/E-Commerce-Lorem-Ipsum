@@ -1,6 +1,5 @@
 .imgProd {
   transition: transform 0.3s ease; /* animación suave */
-  border: 1px solid rgb(70, 14, 14);
 }
 
 .imgProd:hover {

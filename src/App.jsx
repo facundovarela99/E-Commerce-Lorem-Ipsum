@@ -7,6 +7,7 @@ import { About } from './components/about.jsx'
 import { ProductDetail } from './components/productDetail.jsx'
 import { Cart } from './components/Cart.jsx'
 import { FormCheckout } from './components/FormCheckout.jsx'
+import {Toaster} from 'react-hot-toast'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/carrito" element={<Cart />} />
           <Route path="/checkout" element={<FormCheckout />} />
         </Routes>
+        <Toaster/>
       </BrowserRouter>
       <Footer texto="Una promesa es un objeto asíncrono"></Footer>
     </div>

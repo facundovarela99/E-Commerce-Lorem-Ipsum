@@ -29,7 +29,7 @@ export function CounterCarrito({ producto }) {
 
   return (
     <div className="flex flex-col w-75 items-center gap-3">
-      <div className="flex flex-col gap-3 w-full max-w-xs">
+      <div className="flex flex-col gap-3 w-2/4 max-w-xs">
         <button onClick={handlerSuma} className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg shadow-md transition duration-300">
           Agregar
         </button>
