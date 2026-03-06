@@ -1,5 +1,5 @@
 import './App.css'
-import { Navbar } from './components/Navbar.jsx'
+import { Navbar } from './components/navbar.jsx'
 import { Footer } from './components/footer.jsx'
 import { ItemListContainer } from './components/itemListContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
