@@ -58,7 +58,7 @@ export function Navbar() {
                             <summary className={styles.btnNavbar}>Categorias</summary>
                             <ul className="p-2 bg-base-100 w-96 z-1 grid grid-cols-2">
                                 {categorias.map(categoria => (
-                                    <li key={categoria}><button onClick={()=>navigate(`/categoria/${categoria}`)}>{categoria}</button></li>
+                                    <li key={categoria}><button className={styles.btnCategoriasNavbar} onClick={()=>navigate(`/categoria/${categoria}`)}>{categoria}</button></li>
                                 ))}
                             </ul>
                         </details>
