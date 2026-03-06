@@ -8,6 +8,8 @@ import { ProductDetail } from './components/productDetail.jsx'
 import { Cart } from './components/Cart.jsx'
 import { FormCheckout } from './components/FormCheckout.jsx'
 import {Toaster} from 'react-hot-toast'
+import { Home } from './components/Home.jsx'
+import { ProductsContainer } from './components/ProductsContainer.jsx'
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<ItemListContainer />}/>
+          <Route path="/" element={<Home />}/>
+          <Route path="/products" element={<ProductsContainer />}/>
           <Route path='/categoria/:nombreCategoria' element={<ItemListContainer/>}/> 
           <Route path="/producto/:id" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
@@ -24,7 +27,7 @@ function App() {
         </Routes>
         <Toaster/>
       </BrowserRouter>
-      <Footer texto="Una promesa es un objeto asíncrono"></Footer>
+      <Footer></Footer>
     </div>
   )
 }

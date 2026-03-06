@@ -1,0 +1,20 @@
+.footer {
+    background-color: lightsteelblue;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7), 0 -6px 12px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10;
+
+}
+.h6DatosContacto {
+    color: #000;
+    font-size: 1.5rem;
+    font-family: "Fjalla One";
+}
+
+.iBrands{
+    color: #000;
+    &:hover{
+            color: #a37f41;
+            transform: scale(1.5);   
+    }
+}

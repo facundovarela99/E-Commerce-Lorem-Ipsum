@@ -1,0 +1,30 @@
+.productos {
+    background-color: rgb(252, 238, 221);
+    
+}
+.tituloProductos {
+    background-image: linear-gradient(to right top, #00000065, #00000065), url('../assets/paquetes_de_yerba.jpg');
+    background-position: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7), 0 -6px 12px rgba(0, 0, 0, 0.7);
+
+}
+.h1Prods {
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    text-shadow: 5px 5px 0px #A37F41;
+}
+
+.pProducts{
+    color:#1A1A1A;
+    text-transform: uppercase;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.imgProd:hover {
+    transition: all 0.3s ease;
+    outline: 5px solid #000;
+    transform: scale(1.09); 
+    filter: initial; 
+}

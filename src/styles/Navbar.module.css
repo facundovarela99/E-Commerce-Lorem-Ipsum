@@ -2,45 +2,29 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    background-color: #1A1A1A;
 }
 
-.ulCategorias{
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    background-color: rgb(62, 61, 61);
+.tituloNavbar{
+    font-family: 'Playfair Display';
+    padding-left: 45px;
 }
 
-.ulCategorias a{
-    padding: 5px;
-    color: rgb(255, 255, 255);
+.btnNavbar{
+    color: rgba(255, 255, 255, 0.96);
+    font-family: 'Fjalla One', sans-serif;
     text-decoration: none;
+    text-transform: uppercase;
     font-size: 1.5rem;
     &:hover{
-        background-color: rgb(35, 34, 34);
+        background-color: #ffe9c400; /* Color más brillante al pasar el mouse */
+        color: #fab731cc;
     }
-}
-
-.ulCategorias button{
-    font-size: 1.4rem;
-    padding: 5px 10px;
-    border-radius: 3px;
-    &:hover{
-        background-color: rgb(211, 211, 211);
-    }
-}
-
-.ulCategorias input{
-    font-size: 1.4rem;
-    padding: 5px 10px;
-    border-radius: 3px;
 }
 
 .logoNavbar{
-    width: 80px;
+    width: 45px;
+    height: 45px;
 }
 
 .btnCartWidget{
