@@ -9,7 +9,7 @@ import { Cart } from './components/Cart.jsx'
 import { FormCheckout } from './components/FormCheckout.jsx'
 import {Toaster} from 'react-hot-toast'
 import { Home } from './components/Home.jsx'
-import { ProductsContainer } from './components/ProductsContainer.jsx'
+import { ProductsContainer } from './components/productsContainer.jsx'
 
 function App() {
   return (

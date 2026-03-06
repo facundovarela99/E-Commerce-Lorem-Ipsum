@@ -1,5 +1,5 @@
 import styles from '../styles/ProductDetail.module.css'
-import { Counter } from "./Counter.jsx";
+import { Counter } from "./counter.jsx";
 
 export function Product({producto}){
     return(

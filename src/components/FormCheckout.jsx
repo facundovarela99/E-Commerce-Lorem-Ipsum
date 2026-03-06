@@ -1,4 +1,4 @@
-import { CartContext } from "../contexts/CartContext.jsx"
+import { CartContext } from "../contexts/cartContext.jsx"
 import { useContext } from "react"
 import { createOrder } from "../firebase/db.js";
 import { serverTimestamp } from "firebase/firestore";

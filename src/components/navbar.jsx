@@ -2,7 +2,7 @@ import styles from '../styles/Navbar.module.css'
 import logo from "../assets/logo_mate.png"
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import { CartWidget } from './CartWidget.jsx';
+import { CartWidget } from './cartWidget.jsx';
 import { getCategorias } from '../firebase/db.js';
 import { useNavigate } from 'react-router-dom';
 

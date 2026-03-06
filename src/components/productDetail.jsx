@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
-import { Product } from "./Product.jsx";
+import { Product } from "./product.jsx";
 import { getProducto } from "../firebase/db.js";
 
 export function ProductDetail(){
