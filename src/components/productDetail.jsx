@@ -12,7 +12,6 @@ export function ProductDetail(){
     useEffect(()=>{
         const setearProducto = async () => {
             const productoObtenido = await getProducto(id);
-            console.log('Producto obtenido: ', productoObtenido);
             setproducto(productoObtenido);
         }
         setearProducto();

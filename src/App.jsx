@@ -11,7 +11,7 @@ import {Toaster} from 'react-hot-toast'
 
 function App() {
   return (
-    <div className='divRootHijo1'>
+    <div className='divRootHijo1 w-5/5'>
       <BrowserRouter>
         <Navbar/>
         <Routes>

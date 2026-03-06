@@ -1,29 +1,55 @@
+import { CartContext } from "../contexts/CartContext.jsx"
+import { useContext } from "react"
+import { createOrder } from "../firebase/db.js";
+import { serverTimestamp } from "firebase/firestore";
+
 export function FormCheckout() {
+
+    const {GetCart} = useContext(CartContext);
+    const cart = GetCart();
+
+    const handleSubmit = (e) => {
+        console.log('EVENTO')
+        e.preventDefault();
+        const form = e.target
+        
+        const newOrder = {
+            nombre : form.nombre.value,
+            apellido : form.apellido.value,
+            email : form.email.value,
+            celular : form.celular.value,
+            ciudad : form.ciudad.value,
+            direccion : form.direccion.value,
+            hora: serverTimestamp()
+        }
+        createOrder(newOrder, cart);
+    }
+
     return (
         <div className="flex justify-center">
-            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <form className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4" onSubmit={handleSubmit}>
                 <legend className="fieldset-legend">Checkout</legend>
 
                 <label className="label">Nombre</label>
-                <input type="text" className="input" placeholder="Nombre" />
+                <input id="nombre" type="text" className="input" placeholder="Nombre" required />
 
                 <label className="label">Apellido</label>
-                <input type="text" className="input" placeholder="Apellido" />
+                <input id="apellido" type="text" className="input" placeholder="Apellido" required />
 
                 <label className="label">Email</label>
-                <input type="email" className="input" placeholder="Email" />
+                <input id="email" type="email" className="input" placeholder="Email" required />
 
                 <label className="label">Celular</label>
-                <input type="text" className="input" placeholder="Celular" />
+                <input id="celular" type="text" className="input" placeholder="Celular" required />
 
                 <label className="label">Ciudad</label>
-                <input type="text" className="input" placeholder="Ciudad" />
-                
+                <input id="ciudad" type="text" className="input" placeholder="Ciudad" required />
+
                 <label className="label">Dirección</label>
-                <input type="text" className="input" placeholder="Dirección" />
+                <input id="direccion" type="text" className="input" placeholder="Dirección" required />
 
                 <button className="btn btn-neutral mt-4">Enviar</button>
-            </fieldset>
+            </form>
         </div>
     )
 }

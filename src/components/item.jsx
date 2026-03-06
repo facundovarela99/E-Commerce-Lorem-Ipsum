@@ -16,6 +16,7 @@ export function Item({producto}) {
                 <h1 className="card-title text-2xl pt-2">{producto.nombre}</h1>
                 <p className='pt-2'>${producto.precio}</p>
                 <p className='pt-2'>{producto.descripcion}</p>
+                <p className='pt-2'>Stock: {producto.stock}</p>
                 <div className="card-actions justify-end">
                     <button className={styles.btnViewMore} onClick={()=> navigate(`/producto/${producto.id}`)}>Ver mas</button>
                 </div>

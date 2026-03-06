@@ -4,21 +4,21 @@ import { CartContext } from '../contexts/CartContext.jsx'
 
 export function CounterCarrito({ producto }) {
   const { addToCart } = useContext(CartContext);
+  const { substractFromCart } = useContext(CartContext);
   const { removeFromCart } = useContext(CartContext);
 
   const handlerEliminar = () => removeFromCart(producto.id)
 
   const handlerSuma = () => {
-    let quantity = producto.quantity + 1
-    addToCart({ ...producto, quantity })
+    addToCart({ ...producto, quantity:1})
   };
 
   const handlerResta = () => {
-    let quantity = producto.quantity - 1
-    if (quantity === 0) {
+    console.log('HANDLEDEANDO RESTA: ', producto.quantity)
+    if (producto.quantity === 0) {
       removeFromCart(producto.id)
     } else {
-      addToCart({ ...producto, quantity })
+      substractFromCart(producto)
     }
   };
 

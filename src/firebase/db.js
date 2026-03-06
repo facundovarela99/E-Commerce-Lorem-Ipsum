@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import { appFirebase } from "./config.js";
 export const db = getFirestore(appFirebase);
 
@@ -45,4 +45,22 @@ export const getProducto = async (id) => {
       }
     });
     return producto;
+}
+
+export const createOrder = async (newOrder, cart) =>{
+  try {
+  const docRef = await addDoc(collection(db, "orders"), {
+    nombre : newOrder.nombre,
+    apellido : newOrder.apellido,
+    email : newOrder.email,
+    celular : newOrder.celular,
+    ciudad : newOrder.ciudad,
+    direccion : newOrder.direccion,
+    hora: newOrder.hora,
+    carrito: cart
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
 }
