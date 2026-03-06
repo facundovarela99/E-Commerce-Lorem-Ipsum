@@ -1,16 +1,90 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# E-Commerce App - Matienzo
 
-Currently, two official plugins are available:
+Aplicación web desarrollada en React utilizando Vite como bundler, orientada a la venta de productos relacionados al mate y accesorios. El proyecto implementa buenas prácticas de desarrollo, gestión de estado, estilos modernos y conexión con Firebase para persistencia de datos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías y librerías principales
 
-## React Compiler
+- **React 19**: Framework principal para la UI y lógica de componentes.
+- **Vite**: Bundler y servidor de desarrollo rápido.
+- **React Router DOM**: Navegación SPA entre rutas.
+- **Firebase**: Backend para persistencia de productos y órdenes (Firestore).
+- **TailwindCSS** y **DaisyUI**: Estilos utilitarios y componentes UI.
+- **React Hot Toast**: Notificaciones interactivas.
+- **ESLint**: Linter con reglas recomendadas y plugins para hooks y refresh.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estructura del proyecto
 
-## Expanding the ESLint configuration
+- `src/components/`: Componentes reutilizables (Navbar, Footer, Home, Products, ProductDetail, Cart, Checkout, etc.)
+- `src/contexts/`: Contexto global para el carrito (CartContext, CartProvider, useCart).
+- `src/firebase/`: Configuración y funciones para Firestore (config.js, db.js).
+- `src/styles/`: Módulos CSS para estilos personalizados.
+- `src/assets/`: Imágenes y recursos estáticos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Funcionalidades principales
+
+- **Catálogo de productos**: Listado, filtrado por categorías, detalle individual.
+- **Carrito de compras**: Añadir, quitar, modificar cantidad, persistencia en localStorage.
+- **Checkout**: Formulario de compra, creación de orden en Firestore.
+- **Navegación SPA**: Rutas para home, productos, categorías, carrito, checkout y página informativa.
+- **Notificaciones**: Feedback visual para acciones del usuario.
+- **Estilos modernos**: Uso de Tailwind y DaisyUI, módulos CSS para personalización.
+- **Responsive**: Adaptación a distintos tamaños de pantalla.
+
+## Prácticas y patrones utilizados
+
+- **Gestión de estado global**: Context API para el carrito.
+- **Persistencia local**: Carrito guardado en localStorage.
+- **Hooks personalizados**: Ejemplo con useCart.
+- **Separación de responsabilidades**: Componentes, contexto, lógica de Firebase y estilos.
+- **Uso de async/await**: Para operaciones con Firestore.
+- **Modularización**: CSS por componente.
+- **Linter**: ESLint con reglas para evitar errores comunes y mantener calidad.
+
+## Scripts disponibles
+
+- `dev`: Inicia el servidor de desarrollo.
+- `build`: Compila la aplicación para producción.
+- `preview`: Previsualiza el build.
+- `lint`: Ejecuta ESLint.
+
+## Configuración Firebase
+
+La app utiliza Firestore para productos y órdenes. La configuración está en `src/firebase/config.js` y las funciones CRUD en `src/firebase/db.js`.
+
+## Estilos
+
+- TailwindCSS y DaisyUI para estilos base.
+- Módulos CSS para personalización por componente.
+
+## Contacto y redes
+
+Incluye sección de contacto y enlaces a redes sociales en el Footer.
+
+---
+
+### Ejemplo de flujo de usuario
+
+1. El usuario navega por el catálogo, filtra por categorías o busca productos destacados.
+2. Agrega productos al carrito, ajusta cantidades o elimina.
+3. Accede al checkout, completa el formulario y genera la orden (guardada en Firestore).
+4. Recibe notificaciones visuales por cada acción.
+
+---
+
+### Estructura de carpetas
+
+```
+src/
+	components/
+	contexts/
+	firebase/
+	styles/
+	assets/
+```
+
+---
+
+### Autor
+
+Facundo - Proyecto Matienzo
