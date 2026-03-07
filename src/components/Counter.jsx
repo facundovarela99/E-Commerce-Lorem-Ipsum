@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useContext, useState } from 'react'
-import { CartContext } from '../contexts/CartContext.jsx'
+import { CartContext } from '../contexts/cartContext.jsx'
 import toast from 'react-hot-toast';
 
 

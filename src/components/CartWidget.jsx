@@ -1,7 +1,7 @@
 import styles from '../styles/Navbar.module.css'
 import cartWidget from '../assets/shopping-cart.png'
 import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext.jsx'
+import { CartContext } from '../contexts/cartContext.jsx'
 import { useNavigate } from 'react-router-dom';
 
 export function CartWidget() {
