@@ -1,7 +1,7 @@
 import { CartContext } from "../contexts/cartContext.jsx"
 import { useContext } from "react"
 import { EmptyCart } from "./emptyCart.jsx";
-import { CartContainer } from "./CartCointainer.jsx";
+import { CartContainer } from "./cartCointainer.jsx";
 
 export function Cart() {
 

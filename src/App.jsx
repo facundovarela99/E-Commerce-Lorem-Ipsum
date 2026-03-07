@@ -5,10 +5,10 @@ import { ItemListContainer } from './components/itemListContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { About } from './components/about.jsx'
 import { ProductDetail } from './components/productDetail.jsx'
-import { Cart } from './components/Cart.jsx'
-import { FormCheckout } from './components/FormCheckout.jsx'
+import { Cart } from './components/cart.jsx'
+import { FormCheckout } from './components/formCheckout.jsx'
 import {Toaster} from 'react-hot-toast'
-import { Home } from './components/Home.jsx'
+import { Home } from './components/home.jsx'
 import { ProductsContainer } from './components/productsContainer.jsx'
 
 function App() {
