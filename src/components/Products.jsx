@@ -15,14 +15,12 @@ export function Products({ prods }) {
             return acc;
         }, {})
     );
-    console.log('Productos por categoría: ', unicosPorCategoria);
 
     const productos = unicosPorCategoria.map(prod => ({
         img: prod.url,
         nombre: prod.categoria
     }));
 
-    console.log('PRODUCTOS: ', productos)
 
     const [index, setIndex] = useState(0);
 

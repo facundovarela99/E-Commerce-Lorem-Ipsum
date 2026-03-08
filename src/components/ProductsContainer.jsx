@@ -11,7 +11,6 @@ export function ProductsContainer() {
 
         const productosObtenidos = async () => {
             const productosObtenidos = await getProductos();
-            console.log('Productos obtenidos!!!! en ProductsContainer: ', productosObtenidos);
             setItems(productosObtenidos);
         }
         productosObtenidos();

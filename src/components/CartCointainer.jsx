@@ -3,7 +3,6 @@ import { CartItem } from "./CartItem.jsx";
 
 export function CartContainer({cart}){
     const navigate = useNavigate()
-    console.log(cart)
     let total = 0;
     cart.forEach(producto => {
         total += parseInt(producto.precio) * parseInt(producto.quantity);

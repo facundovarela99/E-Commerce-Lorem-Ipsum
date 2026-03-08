@@ -5,7 +5,6 @@ export function HomeContainer({ productos }) {
 
     const navigate = useNavigate();
 
-    console.log('Productos en HOME: ', productos)
     const productosDestacados = [];
     for (const prod of productos) {
         if (prod.nombre === 'Termo Stanley clásico' || prod.nombre === 'Yerba Grito Sagrado' || prod.nombre === 'Mate mundialista') {

@@ -19,14 +19,12 @@ export function ItemListContainer(){
       
       const productosCategoriaObtenidos = async () => {
         const productosObtenidos = await productosCategoria(nombreCategoria);
-        console.log('Productos obtenidos!!!!: ', productosObtenidos);
         setItems(productosObtenidos);
       };
       productosCategoriaObtenidos();
     }else{
       const productosObtenidos = async () =>{
         const productosObtenidos = await getProductos();
-        console.log('Productos obtenidos!!!!: ', productosObtenidos);
         setItems(productosObtenidos);
       }
       productosObtenidos();

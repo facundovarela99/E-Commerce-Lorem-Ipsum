@@ -14,7 +14,6 @@ export function CounterCarrito({ producto }) {
   };
 
   const handlerResta = () => {
-    console.log('HANDLEDEANDO RESTA: ', producto.quantity)
     if (producto.quantity === 0) {
       removeFromCart(producto.id)
     } else {

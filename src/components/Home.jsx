@@ -10,7 +10,6 @@ export function Home() {
 
         const productosObtenidos = async () => {
             const productosObtenidos = await getProductos();
-            console.log('Productos obtenidos!!!!: ', productosObtenidos);
             setItems(productosObtenidos);
         }
         productosObtenidos();

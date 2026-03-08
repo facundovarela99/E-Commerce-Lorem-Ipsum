@@ -13,7 +13,6 @@ export function CartProvider({children}){
     }, [cart]);
 
     const addToCart = (producto) =>{
-        console.log('Producto en addToCart: ', producto)
         const IsInCart = cart.some(prod => prod.id === producto.id);
         if (!IsInCart) {
             SetCart([...cart, producto])
