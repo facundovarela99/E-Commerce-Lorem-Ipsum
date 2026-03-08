@@ -1,4 +1,4 @@
-import { HomeContainer } from "./homeContainer.jsx"
+import { HomeContainer } from "./HomeContainer.jsx"
 import { useState, useEffect } from 'react';
 import { getProductos } from '../firebase/db.js';
 

@@ -1,4 +1,4 @@
-import { CounterCarrito } from "./counterCarrito.jsx"
+import { CounterCarrito } from "./CounterCarrito.jsx"
 import styles from '../styles/imgProdCart.module.css'
 
 export function CartItem({ producto }) {

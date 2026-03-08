@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useContext } from 'react'
-import { CartContext } from '../contexts/cartContext.jsx'
+import { CartContext } from '../contexts/CartContext.jsx'
 
 export function CounterCarrito({ producto }) {
   const { addToCart } = useContext(CartContext);

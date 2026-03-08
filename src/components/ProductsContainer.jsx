@@ -1,4 +1,4 @@
-import { Products } from "./products.jsx";
+import { Products } from "./Products.jsx";
 import { useState, useEffect } from "react";
 import { getProductos } from '../firebase/db.js';
 

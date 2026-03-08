@@ -1,4 +1,4 @@
-import {CartContext} from './cartContext.jsx'
+import {CartContext} from './CartContext.jsx'
 import { useState, useEffect } from 'react'
 
 export function CartProvider({children}){
