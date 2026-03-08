@@ -1,5 +1,5 @@
 import styles from '../styles/Navbar.module.css'
-import cartWidget from '../assets/shopping-cart.png'
+import cartWidget from '../../public/assets/shopping-cart.png'
 import { useContext } from 'react'
 import { CartContext } from '../contexts/CartContext.jsx'
 import { useNavigate } from 'react-router-dom';

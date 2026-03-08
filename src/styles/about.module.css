@@ -1,3 +1,56 @@
-.sectionAbout{
-    background-color: rgb(81, 81, 81);
+.mainAbout {
+    background-color: rgb(252, 238, 221);
+}
+
+
+.h1Title{
+    font-size: 4.5rem;
+    color: #1A1A1A;
+}
+
+.libroTitle {
+    margin: 20px !important;
+    height: 60px !important;
+    width: 60px !important;
+    color: #1A1A1A;
+}
+    
+.pArticle{
+    font-family: "Open Sans";
+    color: #1A1A1A;
+}
+
+
+.separadorAbout{
+    color: #a37f41;
+}
+
+.hrSeparador{
+    border: 0;
+    height: 0.5px; 
+    background-color: #a37f41;
+    opacity: 1;
+}
+
+.tituloCuracion{
+    color: #1A1A1A;
+}
+
+.imgTituloCuracion {
+    margin: 20px !important;
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.liPasosCuracion{
+    font-size: 1.38rem;
+    font-family: "Open Sans";
+    color: #1A1A1A;
+}
+
+.imagenCuracion{
+    background-image: url(../../public/assets/COMO_CURAR_MATE.jpg);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
